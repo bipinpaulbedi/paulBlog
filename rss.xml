@@ -1,29 +1,59 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[paul blog]]></title><description><![CDATA[thoughts, stories & ideas.]]></description><link>https://www.bipinpaulbedi.com</link><generator>RSS for Node</generator><lastBuildDate>Sun, 16 Dec 2018 09:13:55 GMT</lastBuildDate><item><title><![CDATA[ELI5 - Asymptotic computational complexity simplified]]></title><description><![CDATA[The asymptotic notation is the mathematical representation to analyze algorithm and represent its time (and/or space) complexity as its…]]></description><link>https://www.bipinpaulbedi.com/2018-10-20-asymtotic-notations/</link><guid isPermaLink="false">https://www.bipinpaulbedi.com/2018-10-20-asymtotic-notations/</guid><pubDate>Sat, 20 Oct 2018 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;The asymptotic notation is the mathematical representation to analyze algorithm and represent its time (and/or space) complexity as its relation to input size. It describes its behavioral characteristics as the input size for the algorithm increases. The algorithm complexity can also be measured by monitoring time and space usage during its actual physical execution. This approach is not ideal for the following reasons  &lt;/p&gt;
-&lt;p&gt;&lt;em&gt;The accuracy and relativity (times obtained would only be relative to the machine they were computed on) of this method is bound to environmental variables such as computer hardware specifications, processing power, etc.&lt;/em&gt;&lt;br&gt;
-&lt;em&gt;To conclude a general behavior we would have to execute it in several different scenarios.&lt;/em&gt;  &lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[paul blog]]></title><description><![CDATA[thoughts, stories & ideas.]]></description><link>https://www.bipinpaulbedi.com</link><generator>RSS for Node</generator><lastBuildDate>Wed, 19 Dec 2018 01:01:20 GMT</lastBuildDate><item><title><![CDATA[ELI5 - Asymptotic computational complexity simplified]]></title><description><![CDATA[The asymptotic notation is the mathematical representation to analyze algorithm and represent its time (and/or space) complexity as its…]]></description><link>https://www.bipinpaulbedi.com/2018-10-20-asymtotic-notations/</link><guid isPermaLink="false">https://www.bipinpaulbedi.com/2018-10-20-asymtotic-notations/</guid><pubDate>Sat, 20 Oct 2018 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;The asymptotic notation is the mathematical representation to analyze algorithm and represent its time (and/or space) complexity as its relation to input size. It describes its behavioral characteristics as the input size for the algorithm increases. The algorithm complexity can also be measured by monitoring time and space usage during its actual physical execution. This approach is not ideal for the following reasons  &lt;/p&gt;
+&lt;p&gt;The accuracy and relativity (times obtained would only be relative to the machine they were computed on) of this method is bound to environmental variables such as computer hardware specifications, processing power, etc.&lt;br&gt;
+To conclude a general behavior we would have to execute it in several different scenarios.  &lt;/p&gt;
 &lt;p&gt;Thus by representing an algorithm using asymptotic notation, it is much easier, faster and standard methodology to analyze and compare algorithms. For this post, we will restrict our discussion to time complexities {since the tremendous technological advancement has led to the cost of storage (persistent or ephemeral) as negligible}. In any problem domain, for a given algorithm f, with input size n we calculate some resultant runtime f(n). This results in a graph where the Y-axis is the runtime, X-axis is the input size, and plot points are the resultants of the amount of time for a given input size. We would mostly measure the worst-case scenario for any algorithm to compare different algorithms against the standard set of facts and dimentions.  &lt;/p&gt;
 &lt;p&gt;Before analysing the algorithms, we shall establish certain common complexity classes in which an algorithm can be classified i.e. g(n) viz. K (or constant), log n, n, n*log n, n^2, n^3…, 2^n, 3^n…n^n  &lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Types of Asymptotic Notation&lt;/strong&gt;  &lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Big-O&lt;/strong&gt;&lt;br&gt;
 Big-O, commonly written as O, is an Asymptotic Notation for the worst case, or ceiling of growth for a given function. It provides us with an asymptotic upper bound for the growth rate of the runtime of an algorithm.&lt;br&gt;
 For e.g. f(n) is your algorithm runtime, and g(n) is an arbitrary time complexity you are trying to relate to your algorithm. f(n) is O(g(n)), if for some real constants c (c &gt; 0) and n0, f(n) &amp;#x3C;= c g(n) for every input size n (n &gt; n0)  &lt;/p&gt;
-&lt;!-- &lt;img src=&quot;/assets/postimages/2018/10/big-o.jpg&quot; width=&quot;100%&quot; /&gt; --&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;f(n) = O(g(n) For K and N0&lt;/code&gt;&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;if f(n) &amp;lt;= k * g(n) where n&amp;gt;=n0&lt;/code&gt;&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;e.g.&lt;/code&gt;&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;f(n) = 2n^2 + 3n + 1&lt;/code&gt;
+&lt;code class=&quot;language-text&quot;&gt;since 2n^2 + 3n^2 + n2 = 6n^2&lt;/code&gt;&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;f(n) = 2n^2 + 3n + 1 &amp;lt;= 6n^2 for n &amp;gt;= ?&lt;/code&gt;&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;f(n) &amp;lt;= k * g(n)&lt;/code&gt;&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;i.e. 6 * n^2&lt;/code&gt;&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;Thus f(n) = O(n^2)&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Big-Omega&lt;/strong&gt;&lt;br&gt;
 Big-Omega, commonly written as Ω, is an Asymptotic Notation for the best case, or a floor growth rate for a given function. It provides us with an asymptotic lower bound for the growth rate of the runtime of an algorithm.&lt;br&gt;
 f(n) is Ω(g(n)), if for some real constants c (c &gt; 0) and n0 (n0 &gt; 0), f(n) is &gt;= c g(n) for every input size n (n &gt; n0).  &lt;/p&gt;
-&lt;!-- &lt;img src=&quot;/assets/postimages/2018/10/omega.jpg&quot; width=&quot;100%&quot; /&gt; --&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;f(n) = BIG-OMEGA(g(n) For K and N0&lt;/code&gt;&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;if f(n) &amp;gt;= k * g(n) where n&amp;gt;=n0&lt;/code&gt;&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;e.g.&lt;/code&gt;&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;f(n) = 2n^2 + 3n + 1&lt;/code&gt;
+&lt;code class=&quot;language-text&quot;&gt;f(n) = 2n^2 + 3n + 1 &amp;gt;= n^2 for n &amp;gt;= ?&lt;/code&gt;&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;f(n) &amp;lt;= k * g(n)&lt;/code&gt;&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;i.e. 1 * n^2&lt;/code&gt;&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;or k * g(n)&lt;/code&gt;&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;Thus f(n) = BIG-OMEGA(n^2)&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Theta&lt;/strong&gt;&lt;br&gt;
 Theta, commonly written as Θ, is an Asymptotic Notation to denote the asymptotically tight bound on the growth rate of the runtime of an algorithm.&lt;br&gt;
 i.e. if O(g(n)) = Ω(g(n))&lt;br&gt;
 Then&lt;br&gt;
 f(n) = Θ(g(n))&lt;/p&gt;
-&lt;!-- &lt;img src=&quot;/assets/postimages/2018/10/theta.jpg&quot; width=&quot;100%&quot; /&gt; --&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;If f(n) = O(n2)&lt;/code&gt;&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;and f(n) = BIG-OMEGA(n^2)&lt;/code&gt;&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;also&lt;/code&gt;&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;f(n) = O(g(n)) and f(n) = BIG-OMEGA(g(n))&lt;/code&gt;
+&lt;code class=&quot;language-text&quot;&gt;Then f(n) = THETA(g(n))&lt;/code&gt;&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;Thus f(n) = THETA(n^2)&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Note
 The asymptotic growth rates provided by big-O and big-omega notation may or may not be asymptotically tight. Thus we use small-o and small-omega notation to denote bounds that are not asymptotically tight.&lt;/p&gt;
 &lt;p&gt;The main difference is that in f(n) = O(g(n)), the bound f(n) &amp;#x3C;= g(n) holds for &lt;strong&gt;some&lt;/strong&gt; constant c &gt; 0, but in f(n) = o(g(n)), the bound f(n) &amp;#x3C; c g(n) holds for &lt;strong&gt;all&lt;/strong&gt; constants c &gt; 0.
 Similarly
 f(n) = Ω(g(n)), the bound f(n) &gt;= g(n) holds for &lt;strong&gt;some&lt;/strong&gt; constant c &gt; 0, but in f(n) = ω(g(n)), the bound f(n) &gt; c g(n) holds for &lt;strong&gt;all&lt;/strong&gt; constants c &gt; 0.&lt;/p&gt;
-&lt;!-- &lt;img src=&quot;/assets/postimages/2018/10/no-tight-bound.jpg&quot; width=&quot;100%&quot; /&gt; --&gt;</content:encoded></item><item><title><![CDATA[L1 & L2 model regularizations techniques]]></title><description><![CDATA[The most difficult and time consuming activity in any machine learning project is modelling the domain. The objective of training the model…]]></description><link>https://www.bipinpaulbedi.com/2018-10-12-regularization-for-machine-learning-models/</link><guid isPermaLink="false">https://www.bipinpaulbedi.com/2018-10-12-regularization-for-machine-learning-models/</guid><pubDate>Fri, 12 Oct 2018 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;The most difficult and time consuming activity in any machine learning project is modelling the domain. The objective of training the model is to reduce the cost function, which can have direct dependency on feature selection and their representation. The results you achieve is a function of the model features and the weights being selected. Even your framing of the problem and measures you’re using to estimate accuracy play a part. Your results are dependent on many inter-dependent properties&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Calculating for n!&lt;/code&gt;&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;if f(n) = n!&lt;/code&gt;&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;f(n) = n * (n-1) * (n-2)... 2 * 1&lt;/code&gt;
+&lt;code class=&quot;language-text&quot;&gt;For upper bound = n * n * n * n * n * n * n&lt;/code&gt;&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;i.e. f(n) = n! &amp;lt;= n^n for n&amp;gt;=?&lt;/code&gt;&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;f(n) = O(n^n)&lt;/code&gt;
+&lt;code class=&quot;language-text&quot;&gt;For lower bound = 1 * 1 * 1 * 1 * 1...1&lt;/code&gt;
+&lt;code class=&quot;language-text&quot;&gt;= k&lt;/code&gt;
+&lt;code class=&quot;language-text&quot;&gt;Thus f(n) =  BIG-OMEGA(1) or BIG-OMEGA(K)&lt;/code&gt;&lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;since O and BIG-OMEGA for n! is not equal it does not have a tight bound&lt;/code&gt; &lt;/p&gt;</content:encoded></item><item><title><![CDATA[L1 & L2 model regularizations techniques]]></title><description><![CDATA[The most difficult and time consuming activity in any machine learning project is modelling the domain. The objective of training the model…]]></description><link>https://www.bipinpaulbedi.com/2018-10-12-regularization-for-machine-learning-models/</link><guid isPermaLink="false">https://www.bipinpaulbedi.com/2018-10-12-regularization-for-machine-learning-models/</guid><pubDate>Fri, 12 Oct 2018 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;The most difficult and time consuming activity in any machine learning project is modelling the domain. The objective of training the model is to reduce the cost function, which can have direct dependency on feature selection and their representation. The results you achieve is a function of the model features and the weights being selected. Even your framing of the problem and measures you’re using to estimate accuracy play a part. Your results are dependent on many inter-dependent properties&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Feature engineering is the process of transforming raw data into features that better represent the underlying problem to the predictive models, resulting in improved model accuracy on unseen data.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -35,16 +65,16 @@ f(n) = Ω(g(n)), the bound f(n) &gt;= g(n) holds for &lt;strong&gt;some&lt;/stro
 &lt;li&gt;The raw data you have selected and prepared (samples? formatting? cleaning?)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;In order to create less complex model when you have a large number of features in your dataset, some of the Regularization techniques are used to address over-fitting. In general, due to the addition of regularization term, the values of weight matrices decrease because it assumes that a neural network with smaller weight matrices leads to simpler models.&lt;/p&gt;
-&lt;p&gt;|Cost function = Loss + Regularization term|&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Cost function = Loss + Regularization term&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;L1 and L2 are the most common types of regularization. The key difference between these two is the penalty term&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;L1 regularization&lt;/strong&gt;&lt;br&gt;
 A regression model that uses L1 regularization technique is called Lasso Regression&lt;/p&gt;
-&lt;p&gt;|Cost function = Loss + Λ/2m * Σ|weight||&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Cost function = Loss + &amp;amp;Lambda;/2m * &amp;amp;Sigma;&amp;amp;#124;weight&amp;amp;#124;&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Here, lambda is the regularization parameter. It is the hyperparameter whose value is optimized for better results. if lambda is zero then you can imagine we get back original loss. However, if lambda is very large then it will add too much weight and it will lead to under-fitting.&lt;br&gt;
 In L1 regularization, we penalize the absolute value of the weights. The weights may be reduced to zero here. Hence, it is very useful when we are trying to compress our model. Otherwise, we usually prefer L2 over it.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;L2 regularization&lt;/strong&gt;&lt;br&gt;
 A regression model model which uses L2 is called Ridge Regression.&lt;/p&gt;
-&lt;p&gt;|Cost function = Loss + Λ/2m * Σ|weight|^2|&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Cost function = Loss + &amp;amp;Lambda;/2m * &amp;amp;Sigma;&amp;amp;#124;weight&amp;amp;#124;^2&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;It adds “squared magnitude” of coefficient as penalty term to the loss function. L2 regularization is also known as weight decay as it forces the weights to decay towards zero (but not exactly zero).&lt;/p&gt;
 &lt;p&gt;The key difference between these techniques is that in L1 the less important feature’s coefficient are reduced to zero thus, removing some feature altogether. So, this works well for feature selection in case we have a huge number of features.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Developers guide to designing REST endpoints]]></title><description><![CDATA[As per Wikipedia, Design thinking is the cognitive process from which design concepts (e.g. ideas for products) emerge. Design thinking is…]]></description><link>https://www.bipinpaulbedi.com/2018-10-10-coding-blueprint-for-pragmatic-rest-api-developers/</link><guid isPermaLink="false">https://www.bipinpaulbedi.com/2018-10-10-coding-blueprint-for-pragmatic-rest-api-developers/</guid><pubDate>Wed, 10 Oct 2018 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;As per Wikipedia, Design thinking is the cognitive process from which design concepts (e.g. ideas for products) emerge. Design thinking is related to, but is different from problem-solving, decision-making, creativity, sketching and prototyping. During design thinking, the designer’s attention oscillates between their understanding of a problem context and their ideas for a solution. New solution ideas lead to a deeper understanding of the problematic context, which in turn triggers more solution ideas.&lt;/p&gt;
 &lt;p&gt;When your focus acts like a pendulum between problem context and the creative solution then you are bound to wear multiple hats. The irony as the developer when designing API is that your clients are other developers.
@@ -110,7 +140,7 @@ Some developers advocate as to keep the version information in headers. But API 
 &lt;p&gt;&lt;strong&gt;What about responses that don’t involve resources?&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;In certain cases, API calls that sends a response which is not a resource e.g. Calculate, Translate are not uncommon depending on the domain.
 In these cases, Use verbs not nouns e.g. /convert?from=USD&amp;#x26;to=AUD&amp;#x26;amount=100&lt;br&gt;
-Make it clear in your API documentation that these “non-resource” scenarios are different, maybe in you swagger docs.
+Make it clear in your API documentation that these “non-resource” scenarios are different, maybe in you swagger docs.&lt;br&gt;
 &lt;br&gt;
 &lt;strong&gt;How many formats shall we support?&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Respect the HTTP header content-type and accepts e.g. Accept: application/json but let the user override using dot notation e.g. GET /user/1234.dat or GET /user/1234.xml&lt;br&gt;
@@ -118,11 +148,11 @@ If the default form is JSON, in the response properties try using camelCase for 
 &lt;p&gt;&lt;strong&gt;Any other tips and tricks?&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Tip1:&lt;/em&gt;&lt;br&gt;
 A simple can be verb based resourceful API but for complex scenarios use google model
-e.g.
-/search?q=xxx
-/user?q=xxx
-/location/1234/user=xxx – scoped
-/search.xml?q=xxx – formatted&lt;/p&gt;
+e.g.&lt;br&gt;
+/search?q=xxx&lt;br&gt;
+/user?q=xxx&lt;br&gt;
+/location/1234/user=xxx – scoped&lt;br&gt;
+/search.xml?q=xxx – formatted  &lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Tip2:&lt;/em&gt;&lt;br&gt;
 Consolidate API under a single domain with segregation for environments following a standard pattern e.g.
 api.xxx.com
