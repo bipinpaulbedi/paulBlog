@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[paul blog]]></title><description><![CDATA[thoughts, stories & ideas.]]></description><link>https://www.bipinpaulbedi.com</link><generator>RSS for Node</generator><lastBuildDate>Wed, 27 Mar 2019 02:36:31 GMT</lastBuildDate><item><title><![CDATA[57 counterproductive software design practices - anti patterns.]]></title><description><![CDATA[Image Source :  Photo by Donnie Rosie on Unsplash Software designers talk about  design patterns or the best practices for application…]]></description><link>https://www.bipinpaulbedi.com/2019-03-27-software-anti-patterns/</link><guid isPermaLink="false">https://www.bipinpaulbedi.com/2019-03-27-software-anti-patterns/</guid><pubDate>Wed, 27 Mar 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;a
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[paul blog]]></title><description><![CDATA[thoughts, stories & ideas.]]></description><link>https://www.bipinpaulbedi.com</link><generator>RSS for Node</generator><lastBuildDate>Wed, 27 Mar 2019 02:46:40 GMT</lastBuildDate><item><title><![CDATA[57 counterproductive software design practices - anti patterns.]]></title><description><![CDATA[Image Source :  Photo by Donnie Rosie on Unsplash Software designers talk about  design patterns or the best practices for application…]]></description><link>https://www.bipinpaulbedi.com/2019-03-27-software-anti-patterns/</link><guid isPermaLink="false">https://www.bipinpaulbedi.com/2019-03-27-software-anti-patterns/</guid><pubDate>Wed, 27 Mar 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;a
     class=&quot;gatsby-resp-image-link&quot;
     href=&quot;/static/752bbf626d92c84808084bd0e62064d3/5a312/anti-pattern-patch.jpg&quot;
     style=&quot;display: block&quot;
@@ -49,19 +49,19 @@
 &lt;li&gt;Inner - platform effect - A software so customisable as to become poor replica of software development platform.&lt;/li&gt;
 &lt;li&gt;Input kludge - Failing to specify and implement handling of possibly invalid inputs.&lt;/li&gt;
 &lt;li&gt;Interface bloat - making an interface so powerful that it is extremely difficult to implement.&lt;/li&gt;
-&lt;li&gt;Magic pushbutton - Coding implementation logic directly within interface code, without using abstraction.&lt;/li&gt;
+&lt;li&gt;Magic push button - Coding implementation logic directly within interface code, without using abstraction.&lt;/li&gt;
 &lt;li&gt;Race hazard - Failing to see consequences of different orders of events.&lt;/li&gt;
 &lt;li&gt;Stovepipe system -  A barely maintainable assemblage of ill-related components.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;OOD anti-patterns&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Anemic domain model - Use of domain model without business knowledge.&lt;/li&gt;
-&lt;li&gt;Basebean - Inheriting functionality from utility class rather than delegating to it.&lt;/li&gt;
+&lt;li&gt;Anaemic domain model - Use of domain model without business knowledge.&lt;/li&gt;
+&lt;li&gt;Base bean - Inheriting functionality from utility class rather than delegating to it.&lt;/li&gt;
 &lt;li&gt;Call super - Requiring subclasses to call a superclass’s overridden method.&lt;/li&gt;
-&lt;li&gt;Circle ellipse problem - Subtyping variable-types on the bases of value-subtypes.&lt;/li&gt;
+&lt;li&gt;Circle ellipse problem - Sub typing variable-types on the bases of value-subtypes.&lt;/li&gt;
 &lt;li&gt;Circular dependency - Introducing unnecessary direct or indirect mutual dependencies between objects.&lt;/li&gt;
 &lt;li&gt;Constant interface - using interface to define constants.&lt;/li&gt;
-&lt;li&gt;God object - Concentrating too many functionality in a single part of design.&lt;/li&gt;
+&lt;li&gt;God object - Concentrating too many functionalities in a single part of design.&lt;/li&gt;
 &lt;li&gt;Object cesspool - Reusing objects whose state does not confirm to the contract of reuse.&lt;/li&gt;
 &lt;li&gt;Object orgy - Failing to properly encapsulate objects permitting unrestricted access to their internals.&lt;/li&gt;
 &lt;li&gt;Poltergeists - Objects whose sole purpose is to pass information to another object.&lt;/li&gt;
@@ -94,7 +94,7 @@
 &lt;li&gt;Copy-paste programming. Copying (modifying) and pasting existing code rather than implementing generic solution.&lt;/li&gt;
 &lt;li&gt;Golden hammering - Assuming that a favourite solution is universally applicable.&lt;/li&gt;
 &lt;li&gt;Improbability factor -  Assuming that it is improbably that a known error will occur.&lt;/li&gt;
-&lt;li&gt;NHI syndrome - The tendency towards reinventing the wheel, assuming it does not exists here before.&lt;/li&gt;
+&lt;li&gt;NHI syndrome - The tendency towards reinventing the wheel, assuming it does not exist here before.&lt;/li&gt;
 &lt;li&gt;Premature optimisation -  Coding early on for a perceived efficiency, sacrificing good design, maintainability, and sometimes even real world efficiency.&lt;/li&gt;
 &lt;li&gt;Programming by permutation - Trying to approach a solution by successively modifying the code to see if it works.&lt;/li&gt;
 &lt;li&gt;Reinventing the wheel - Failing to adopt an existing, adequate solution.&lt;/li&gt;
